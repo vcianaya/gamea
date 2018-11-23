@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Toast.makeText(getApplicationContext(),"adasd",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(MainActivity.this, PrincipalActivity.class));
             }
         });
 

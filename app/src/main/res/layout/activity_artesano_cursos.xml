@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo"
+    tools:context="smsc.dtmu.artesano.artesano.MainActivity">
+
+    <WebView
+        android:id="@+id/wv_form1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/footer_sup3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/lupa_izq6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.8203125" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/cabe_sup4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0019569471" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/cs_der6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/cabe_sup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.0019569471" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/regi_izq3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.29947916" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/reg_der3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.41" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/curso_izq3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.58" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/noticia_der3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.7317708" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/buscar_der3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9557292" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/footer_sup3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9295499" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/footr_inf3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.9941292" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/marco_izq3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.041666668" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/inicio_der3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.18229167" />
+
+    <Button
+        android:id="@+id/btn_inicio5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/btn_inicio"
+        app:layout_constraintBottom_toTopOf="@+id/footr_inf3"
+        app:layout_constraintEnd_toStartOf="@+id/inicio_der3"
+        app:layout_constraintStart_toStartOf="@+id/marco_izq3"
+        app:layout_constraintTop_toTopOf="@+id/footer_sup3" />
+
+    <Button
+        android:id="@+id/btn_registro5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/noticia_opt"
+        app:layout_constraintBottom_toTopOf="@+id/footr_inf3"
+        app:layout_constraintEnd_toStartOf="@+id/reg_der3"
+        app:layout_constraintStart_toStartOf="@+id/regi_izq3"
+        app:layout_constraintTop_toTopOf="@+id/footer_sup3" />
+
+    <Button
+        android:id="@+id/btn_noticia5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/btn_cursos"
+        app:layout_constraintBottom_toTopOf="@+id/footr_inf3"
+        app:layout_constraintEnd_toStartOf="@+id/noticia_der3"
+        app:layout_constraintStart_toStartOf="@+id/curso_izq3"
+        app:layout_constraintTop_toTopOf="@+id/footer_sup3" />
+
+    <Button
+        android:id="@+id/btn_buscar5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/btn_buscar"
+        app:layout_constraintBottom_toTopOf="@+id/footr_inf3"
+        app:layout_constraintEnd_toStartOf="@+id/buscar_der3"
+        app:layout_constraintStart_toStartOf="@+id/lupa_izq6"
+        app:layout_constraintTop_toTopOf="@+id/footer_sup3" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/inicio_der3"
+        app:layout_constraintStart_toStartOf="@+id/marco_izq3"
+        app:layout_constraintTop_toTopOf="@+id/cabe_sup3"
+        app:layout_constraintVertical_bias="0.416"
+        app:srcCompat="@drawable/cs" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/curso_izq3"
+        app:layout_constraintStart_toStartOf="@+id/reg_der3"
+        app:layout_constraintTop_toTopOf="@+id/cabe_sup3"
+        app:srcCompat="@drawable/gamea" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toStartOf="@+id/buscar_der3"
+        app:layout_constraintStart_toStartOf="@+id/lupa_izq6"
+        app:layout_constraintTop_toTopOf="@+id/cabe_sup3"
+        app:srcCompat="@drawable/smde" />
+</android.support.constraint.ConstraintLayout>

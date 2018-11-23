@@ -1,79 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:orientation="vertical"
-    android:background="@drawable/backround"
-    android:paddingHorizontal="50dp">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingBottom="20dp"
-        android:orientation="vertical">
+    android:background="@drawable/backround">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:background="@drawable/trans_white_rectangle"
-            android:layout_marginTop="20dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="50dp"
-                android:textColor="#000"
-                android:textStyle="bold"
-                android:textAlignment="center"
-                android:paddingHorizontal="10dp"
-                android:text="Crear Cuenta" />
-        </LinearLayout>
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.03" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline18"
+        app:layout_constraintStart_toStartOf="@+id/guideline8"
+        app:layout_constraintTop_toTopOf="@+id/guideline7">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
             android:background="@drawable/trans_white_rectangle"
-            android:layout_marginTop="15dp"
-            android:paddingVertical="15dp"
-            android:paddingHorizontal="30dp">
+            android:orientation="vertical">
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_ci"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Cedula de identidad"
-                    android:inputType="number"/>
+                    android:inputType="number"
+                    android:singleLine="true" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_nombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Nombre"
-                    android:inputType="textCapWords|textPersonName"
-                    android:singleLine="true" />
+                    android:hint="Nombres"
+                    android:inputType="textCapWords|textPersonName" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_apellido"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -86,9 +83,7 @@
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_fec_nac"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/edt_fec_nac"
@@ -102,9 +97,7 @@
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_telefono"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -117,73 +110,57 @@
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_zona"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Zona"
                     android:inputType="textCapWords|textPersonName"
-                    android:singleLine="true" />
+                    android:hint="Zona" />
             </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:id="@+id/til_distrito"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:paddingLeft="10dp"
-                android:hint="Distrito"
-                android:background="@drawable/input_login">
             <com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner
                 android:id="@+id/sp_distrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColorHint="#05ab9a"
+                android:hint="Distrito"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
                 app:met_floatingLabel="normal" />
-            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
-
+                android:layout_height="wrap_content">
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Contraseña"
-                    android:inputType="textPassword"
-                    android:singleLine="true" />
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:id="@+id/til_password_confirm"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:background="@drawable/input_login">
+                android:layout_height="wrap_content">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Confirmar Contraseña"
-                    android:inputType="textPassword"
-                    android:singleLine="true" />
+                    android:hint="Confirmar contraseña"
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/btn_login"
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:textSize="40sp"
-                android:background="@drawable/btn_login_backroud"
-                android:text="Registrarme" />
-
+                android:layout_marginHorizontal="10dp"
+                android:layout_marginVertical="10dp"
+                android:text="REGISTRARME" />
         </LinearLayout>
-    </LinearLayout>
-</LinearLayout>
+    </ScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

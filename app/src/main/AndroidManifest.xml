@@ -20,7 +20,17 @@
             </intent-filter>
         </activity>
         <activity android:name=".PrincipalActivity" />
-        <activity android:name=".RegisterActivity"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".denuncia.DenunciaActivity"
+            android:label="@string/title_activity_denuncia"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".artesano.MainArtesanoActivity" />
+        <activity android:name=".artesano.ArtesanoNoticiaActivity" />
+        <activity android:name=".artesano.ArtesanoCursosActivity" />
+        <activity android:name=".artesano.ArtesanoBuscarActivity"></activity>
     </application>
 
 </manifest>
