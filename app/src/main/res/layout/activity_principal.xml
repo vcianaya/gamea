@@ -121,7 +121,7 @@
         app:srcCompat="@drawable/payasito" />
 
     <ImageView
-        android:id="@+id/imageView18"
+        android:id="@+id/img_test"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -134,7 +134,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideline21"
         app:layout_constraintStart_toStartOf="@+id/guideline22"
         app:layout_constraintTop_toTopOf="@+id/guideline26"
-        app:srcCompat="@drawable/yayo" />
+        app:srcCompat="@drawable/volar_sin_violencia" />
 
     <ImageView
         android:id="@+id/img_artesano"
