@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -14,15 +15,18 @@ import com.anaya.victor.gamea.R;
 
 public class InfoViolenciaActivity extends AppCompatActivity {
     ImageView img_violencia, img_psicologica, img_sexual, img_digital, img_mujer, img_educativo;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_violencia);
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
         init();
     }
     private void init(){
+        toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("");
         img_violencia = (ImageView)findViewById(R.id.img_violencia);
         img_violencia.setOnClickListener(new View.OnClickListener() {
             @Override

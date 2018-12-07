@@ -7,6 +7,15 @@
     tools:context=".testviolencia.BullyingActivity"
     android:background="@drawable/fondo_transparente">
 
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <android.support.constraint.Guideline
         android:id="@+id/guideline43"
         android:layout_width="wrap_content"
@@ -41,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:background="@drawable/button_test"
@@ -66,6 +75,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline46" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="326dp"
         android:layout_height="158dp"
         android:layout_marginTop="8dp"
@@ -73,7 +83,7 @@
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:id="@+id/txv_consulta"

@@ -4,9 +4,11 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.support.v7.widget.Toolbar;
 
 import com.anaya.victor.gamea.R;
 import com.anaya.victor.gamea.testviolencia.clases.Preguntas;
@@ -18,12 +20,14 @@ import java.util.ListIterator;
 import pl.droidsonroids.gif.GifImageView;
 
 public class AcosoSexualActivity extends AppCompatActivity {
+
     TextView txv_consulta;
     Button btn_si, btn_no;
     Integer index = 0;
     Integer si, no;
     GifImageView semaforo;
     ArrayList<Preguntas> preguntasArrayList = new ArrayList<Preguntas>();
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,9 +36,10 @@ public class AcosoSexualActivity extends AppCompatActivity {
     }
 
     private void init() {
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
-        actionBar.setHomeButtonEnabled(true);
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("¿Sufres de acoso sexual?");
         txv_consulta = (TextView)findViewById(R.id.txv_consulta);
         preguntasArrayList.add(new Preguntas("¿En la calle, el colegio, la movilidad u otro lugar público has recibido piropos o comentarios sobre tu apariencia física que te han hecho sentir incómodo (a) y te han ofendido?",0));
         preguntasArrayList.add(new Preguntas("¿Alguna persona del sexo opuesto te ha mirado de forma morbosa o ha hecho gestos insinuantes que te causen molestia?",0));
@@ -103,18 +108,30 @@ public class AcosoSexualActivity extends AppCompatActivity {
     }
 
     private void check_respuestas(){
+        Integer c = 0;
         if (si >= 3 && no >= 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","acoso");
-            bundle.putString("respuesta","amarillo");
-            startActivity(new Intent(AcosoSexualActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "acoso");
+                bundle.putString("respuesta", "amarillo");
+                startActivity(new Intent(AcosoSexualActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c = c + 1;
+            }
         }
 
         if (si <= 1 || no > 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","acoso");
-            bundle.putString("respuesta","verde");
-            startActivity(new Intent(AcosoSexualActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "acoso");
+                bundle.putString("respuesta", "verde");
+                startActivity(new Intent(AcosoSexualActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c = c + 1;
+            }
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
     }
 }

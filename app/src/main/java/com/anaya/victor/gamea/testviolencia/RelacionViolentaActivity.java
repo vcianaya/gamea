@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,6 +25,7 @@ public class RelacionViolentaActivity extends AppCompatActivity {
     Integer siempre, aveces, nunca;
     GifImageView semaforo;
     ArrayList<Preguntas> preguntasArrayList = new ArrayList<Preguntas>();
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,10 +34,10 @@ public class RelacionViolentaActivity extends AppCompatActivity {
     }
 
     private void init() {
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
-        actionBar.setHomeButtonEnabled(true);
-
+        toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("¿Tu relacion de pareja es violenta?");
         txv_consulta = (TextView)findViewById(R.id.txv_consulta);
         btn_siempre = (Button)findViewById(R.id.btn_siempre);
         btn_aveces = (Button) findViewById(R.id.btn_aveces);
@@ -135,25 +137,35 @@ public class RelacionViolentaActivity extends AppCompatActivity {
 
     }
     private void check_respuestas(){
+        Integer c = 0;
         if (aveces <= 1 && nunca >= 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","relacion_violenta");
-            bundle.putString("respuesta","verde");
-            startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "relacion_violenta");
+                bundle.putString("respuesta", "verde");
+                startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c=c+1;
+            }
         }
 
         if (aveces >= 2 && aveces <= 5){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","relacion_violenta");
-            bundle.putString("respuesta","amarillo");
-            startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "relacion_violenta");
+                bundle.putString("respuesta", "amarillo");
+                startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c=c+1;
+            }
         }
 
         if (aveces >= 6 || siempre > 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","relacion_violenta");
-            bundle.putString("respuesta","rojo");
-            startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "relacion_violenta");
+                bundle.putString("respuesta", "rojo");
+                startActivity(new Intent(RelacionViolentaActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c= c+1;
+            }
         }
     }
 }

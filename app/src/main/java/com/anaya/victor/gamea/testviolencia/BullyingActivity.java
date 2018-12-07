@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.widget.Toolbar;
 
 import com.anaya.victor.gamea.R;
 import com.anaya.victor.gamea.splash.SplashActivity;
@@ -27,6 +28,7 @@ public class BullyingActivity extends AppCompatActivity {
     Integer siempre, aveces, nunca;
     GifImageView semaforo;
     ArrayList<Preguntas>preguntasArrayList = new ArrayList<Preguntas>();
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,9 +37,10 @@ public class BullyingActivity extends AppCompatActivity {
 
     }
     private void init() {
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
-        actionBar.setHomeButtonEnabled(true);
+        toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("¿Sufres de bulling en la escuela?");
         txv_consulta = (TextView)findViewById(R.id.txv_consulta);
         preguntasArrayList.add(new Preguntas("¿Tus compañeros (as) del colegio te obligan a hacer cosas que no quieres o que estan mal?",0));
         preguntasArrayList.add(new Preguntas("¿Tus compañeros (as) del colegio rompen o esconden tus cosas a proposito?",0));
@@ -132,25 +135,35 @@ public class BullyingActivity extends AppCompatActivity {
     }
 
     private void check_respuestas(){
+        Integer c = 0;
         if (aveces <= 1 && nunca >= 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","bullying");
-            bundle.putString("respuesta","verde");
-            startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "bullying");
+                bundle.putString("respuesta", "verde");
+                startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c = c+1;
+            }
         }
 
         if (aveces >= 2 && aveces <= 5){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","bullying");
-            bundle.putString("respuesta","amarillo");
-            startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "bullying");
+                bundle.putString("respuesta", "amarillo");
+                startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c = c+1;
+            }
         }
 
         if (aveces >= 6 || siempre > 0){
-            Bundle bundle = new Bundle();
-            bundle.putString("test","bullying");
-            bundle.putString("respuesta","rojo");
-            startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+            if (c == 0) {
+                Bundle bundle = new Bundle();
+                bundle.putString("test", "bullying");
+                bundle.putString("respuesta", "rojo");
+                startActivity(new Intent(BullyingActivity.this, RespuestaActivity.class).putExtras(bundle));
+                c = c+1;
+            }
         }
     }
 

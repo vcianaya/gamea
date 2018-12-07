@@ -1,10 +1,14 @@
 package com.anaya.victor.gamea.testviolencia;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.anaya.victor.gamea.R;
 import com.anaya.victor.gamea.testviolencia.clases.Ubicacion;
@@ -15,15 +19,18 @@ import java.util.ArrayList;
 public class DondeAcudirActivity extends AppCompatActivity {
     ArrayList<Ubicacion>ubicacions;
     RecyclerView recyclerView;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donde_acudir);
-        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle("");
         init();
     }
     private void init(){
+        toolbar = (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Lugares donde acudir");
         recyclerView = (RecyclerView)findViewById(R.id.recicler_ubicaciones);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
@@ -53,11 +60,27 @@ public class DondeAcudirActivity extends AppCompatActivity {
 
         ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 6","Defensoría De la Niñez y la Adolescencia\nAvenida Sucre, entre Calle Ingavi y Sucre a una Cuadra de final Castillo lado Colegio “Adrián Castillo  Anexo” altura de la Gasolinera Alto Lima.\n69960858", new LatLng(-23023.3232,-232323)));
         ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 6","Defensoría De la Niñez y la Adolescencia (DNA Interprovincial)\nZona Villa Bolívar “A” Avenida Evadidos del Paraguay. Inmediaciones del Colegio Andrés Bello.\n69960525", new LatLng(-23023.3232,-232323)));
-        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 6","Defensoría De la Niñez y la Adolescencia ", new LatLng(-23023.3232,-232323)));
-        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 6","", new LatLng(-23023.3232,-232323)));
+        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 6","Defensoría De la Niñez y la Adolescencia (DNA Aeropuerto)\nAeropuerto Internacional de El Alto.\n69960854", new LatLng(-23023.3232,-232323)));
+
+        ubicacions.add(new Ubicacion( R.drawable.ic_local_activity_black_24dp,"Distrito 6","AIDAJ (Tupac Amaru)\nZona Alto lima (Tras Cancha Alambrado)\n72546968", new LatLng(-23023.3232,-232323)));
+
+        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 7","Defensoría De la Niñez y la Adolescencia\nZona San Roque, Carretera Copacabana entre Colegio San Roque y Centro de Salud San Roque, interior Sub Alcaldía D-7 planta baja.\n69960857", new LatLng(-23023.3232,-232323)));
+
+        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 8","Defensoría De la Niñez y la Adolescencia\nZona Tarapaca “D” Avenida Estela Ponce, interior de la estación policial Integral EPI.\n69960855", new LatLng(-23023.3232,-232323)));
+        ubicacions.add(new Ubicacion( R.drawable.ic_local_activity_black_24dp,"Distrito 8","AIDAJ (Modelo Boliviano Japones)\nZona senkata (Tras la Sub - Alcaldia)\n72546968", new LatLng(-23023.3232,-232323)));
+
+        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 12","Defensoría De la Niñez y la Adolescencia\nZona Ampliación San pedro de Laja. Avenida San Pedro interior de la Sub Alcaldía Distrito 12.\n69960856", new LatLng(-23023.3232,-232323)));
+        ubicacions.add(new Ubicacion( R.drawable.ic_home_black_24dp,"Distrito 14","Defensoría De la Niñez y la Adolescencia\nZona Bautista Saavedra, Carretera Copacabana entre Avenida Bautista Saavedra y José María Acha, lado cancha sintética, interior al centro Tecnológico del mismo nombre.\n69960012", new LatLng(-23023.3232,-232323)));
 
 
         AdapterUbicaciones adapterUbicaciones = new AdapterUbicaciones(ubicacions);
+        adapterUbicaciones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int position = recyclerView.getChildAdapterPosition(view);
+                startActivity(new Intent(DondeAcudirActivity.this,MapsActivity.class).putExtra("ubicacion",()));
+            }
+        });
         recyclerView.setAdapter(adapterUbicaciones);
         //Defensoría De la Niñez y la Adolescencia
     }

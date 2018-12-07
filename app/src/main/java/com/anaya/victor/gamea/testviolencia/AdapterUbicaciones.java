@@ -12,9 +12,9 @@ import com.anaya.victor.gamea.testviolencia.clases.Ubicacion;
 
 import java.util.ArrayList;
 
-public class AdapterUbicaciones extends RecyclerView.Adapter<AdapterUbicaciones.ViewHolderUbicaciones> {
+public class AdapterUbicaciones extends RecyclerView.Adapter<AdapterUbicaciones.ViewHolderUbicaciones> implements View.OnClickListener {
     ArrayList<Ubicacion>ubicacions;
-
+    private View.OnClickListener listener;
     public AdapterUbicaciones(ArrayList<Ubicacion> ubicacions) {
         this.ubicacions = ubicacions;
     }
@@ -23,6 +23,7 @@ public class AdapterUbicaciones extends RecyclerView.Adapter<AdapterUbicaciones.
     @Override
     public ViewHolderUbicaciones onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_list_lugares,viewGroup,false);
+        view.setOnClickListener(this);
         return new ViewHolderUbicaciones(view);
     }
 
@@ -34,6 +35,16 @@ public class AdapterUbicaciones extends RecyclerView.Adapter<AdapterUbicaciones.
     @Override
     public int getItemCount() {
         return ubicacions.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+       this.listener = listener;
+    }
+    @Override
+    public void onClick(View view) {
+        if (listener!=null){
+            listener.onClick(view);
+        }
     }
 
     public class ViewHolderUbicaciones extends RecyclerView.ViewHolder {

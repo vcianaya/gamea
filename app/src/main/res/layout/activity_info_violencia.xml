@@ -6,13 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".testviolencia.InfoViolenciaActivity"
     android:background="#ffae21">
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.3" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline50"
@@ -33,12 +41,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="¿Qué sabes sobre la violencia?"
+        android:textAlignment="center"
+        android:textColor="@color/colorAccent"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textAlignment="center"
-        android:textColor="@color/colorAccent"/>
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/textView10"

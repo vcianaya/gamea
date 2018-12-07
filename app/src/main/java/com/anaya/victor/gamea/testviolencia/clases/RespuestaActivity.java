@@ -18,7 +18,7 @@ public class RespuestaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_respuesta);
-        hideNavigationBar();
+       // hideNavigationBar();
         carouselView = (CarouselView)findViewById(R.id.carousel);
         carouselView.setPageCount(images.length);
         carouselView.setImageListener(imageListener);

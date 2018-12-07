@@ -17,7 +17,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        hideNavigationBar();
+
         final Bundle bundle = getIntent().getExtras();
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -39,9 +39,5 @@ public class SplashActivity extends AppCompatActivity {
                 finish();
             }
         },1000);
-    }
-    private void hideNavigationBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
     }
 }

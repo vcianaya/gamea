@@ -3,7 +3,9 @@ package com.anaya.victor.gamea.testviolencia.clases;
 import com.anaya.victor.gamea.R;
 import com.google.android.gms.maps.model.LatLng;
 
-public class Ubicacion {
+import java.io.Serializable;
+@SuppressWarnings("Ubicacion")
+public class Ubicacion implements Serializable {
     int icon;
     String distrito, direccion;
     LatLng latLng;

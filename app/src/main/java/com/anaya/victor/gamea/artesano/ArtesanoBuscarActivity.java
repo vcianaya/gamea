@@ -18,7 +18,6 @@ public class ArtesanoBuscarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesano_buscar);
-        hideNavigationBar();
         inicio=(Button)findViewById(R.id.btn_inicio3);
         reg=(Button)findViewById(R.id.btn_registro3);
         not=(Button)findViewById(R.id.btn_noticia3);
@@ -51,10 +50,5 @@ public class ArtesanoBuscarActivity extends AppCompatActivity {
                 startActivity(noticia);
             }
         });
-    }
-
-    private void hideNavigationBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
     }
 }

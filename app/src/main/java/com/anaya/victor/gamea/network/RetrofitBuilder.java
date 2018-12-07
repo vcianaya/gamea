@@ -16,7 +16,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory;
 
 
 public class RetrofitBuilder {
-    private static final String BASE_URL = "http://192.168.0.14/gamea-app/public/api/";
+    private static final String BASE_URL = "http://192.168.1.6/gamea-app/public/api/";
 
     private static final OkHttpClient client = buildClient();
     private static final Retrofit retrofit = buildRetrofit(client);
@@ -46,7 +46,6 @@ public class RetrofitBuilder {
                 .client(client)
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build();
-
     }
 
     public static <T> T createService(Class<T> service){

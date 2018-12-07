@@ -15,7 +15,6 @@ public class MainArtesanoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_artesano);
-        hideNavigationBar();
         reg=(Button)findViewById(R.id.btn_reg);
         noti=(Button)findViewById(R.id.btn_noticia);
         lupa=(Button)findViewById(R.id.btn_buscar);
@@ -41,10 +40,5 @@ public class MainArtesanoActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-    }
-
-    private void hideNavigationBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
     }
 }

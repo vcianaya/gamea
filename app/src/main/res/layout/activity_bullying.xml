@@ -7,6 +7,14 @@
     tools:context=".testviolencia.BullyingActivity"
     android:background="@drawable/fondo_transparente">
 
+    <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
     <android.support.constraint.Guideline
         android:id="@+id/guideline43"
         android:layout_width="wrap_content"
@@ -90,7 +98,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btn_aveces"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <TextView
             android:id="@+id/txv_consulta"

@@ -18,7 +18,6 @@ public class ArtesanoNoticiaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artesano_noticia);
-        hideNavigationBar();
 
         inicio=(Button)findViewById(R.id.btn_inicio4);
         reg=(Button)findViewById(R.id.btn_registro4);
@@ -50,10 +49,5 @@ public class ArtesanoNoticiaActivity extends AppCompatActivity {
                 startActivity(registro);
             }
         });
-    }
-
-    private void hideNavigationBar() {
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.hide();
     }
 }
